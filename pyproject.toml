@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "organize"
+version = "0.1.0"
+description = "Customize automatic organization of your local files."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["platformdirs"]
+
+[project.scripts]
+organizer = "src.organize:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+pythonpath = ["src"]
