@@ -63,6 +63,7 @@ class OverwriteRun(Run):
 class Dry:
     def __init__(self, run: Run):
         self._run = run
+        self._run.move = self.move
 
     # in dry run, no files are actually moved 
     def move(self, item, destination):
